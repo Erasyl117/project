@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Контакты{% endblock title %}
+{% block header %}Контакты{% endblock header %}
+
+{% block content %}
+{%load static%}
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="{% static "css/styles.css"%}"/>
+    <title>Django EraEdu</title>
+</head>
+<body>
+    <h1>{{header}}</h1>
+    <img src="{%static "images/Contact.png"%}" alt="EraEdu">
+</body>
+</html>
+<p>Телефон: 12345677890</p>
+<p>Email: tralala</p>
+{% endblock content %}

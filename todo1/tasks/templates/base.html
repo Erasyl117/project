@@ -1,0 +1,13 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{%block title%}Default title {% endblock %}</title>
+</head>
+<body>
+    <div><a href="/">Главная</a> |<a href ="contacts">Контакты</a>|<a href ="about">Подробнее</a></div>
+    <h1>{% block header %}{%endblock header%}</h1>
+    <div>{%block content%}{%endblock content%}</div>
+    <div>MyCrop. 2022. All rights reserved.</div>
+</body>
+</html>

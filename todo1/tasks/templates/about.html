@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Подробнее{% endblock title %}
+{% block header %}Подробнее{% endblock header %}
+
+{% block content %}
+<!DOCTYPE>
+{%load static%}
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="{% static "css/styles.css"%}"/>
+    <title>Django EraEdu</title>
+</head>
+<body>
+    <h1>{{header}}</h1>
+    <img src="{%static "images/CSS.png"%}" alt="EraEdu">
+</body>
+</html>
+{% endblock content %}
