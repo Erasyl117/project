@@ -1,0 +1,21 @@
+{%extends "base.html"%}
+{%block title%}регистрация{%endblock%}
+{%block content %}
+<h2 class="mb-3">Регистрация</h2>
+{%if error%}
+<div class="alert alert-danger">{{error}}</div>
+{%endif%}
+<form method="POST">
+    {%csrf_token%}
+    <div class="mb-3">
+        <label class="form-label">имя пользователя</label>
+        <input type="text" name="username" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">пароль</label>
+        <input type="password" name="password" class="form-control" required>
+    </div>
+    <button class="btn btn-success">регистрация</button>
+    <a href="{%url 'login'%}" class="btn btn-link">Войти в аккаунт если он уже есть</a>
+</form>
+{%endblock%}

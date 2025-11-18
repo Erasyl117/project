@@ -1,0 +1,11 @@
+{%extends "base.html"%}
+{%block title %}Изменить статью{%endblock%}
+{%block content%}
+<h2>Edit Article</h2>
+<form method="POST">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button class="btn btn-success">сохранить</button>
+    <a href="{% url 'artdetail' article.id %}" class="btn btn-secondary">отменить</a>
+</form>
+{%endblock%}

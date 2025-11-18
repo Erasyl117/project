@@ -1,0 +1,22 @@
+{%extends "base.html"%}
+{%block title%}   статии{%endblock%}
+{%block content%}
+<h2>Статии</h2>
+{%if request.user.is_authenticated%}
+    <a href="{%url 'artcreate'%}" class="btn btn-primary mb-3">создать новую статью</a>
+{%endif%}
+<ul class="list-group">
+    {%for article in articles%}
+    <li class="list-group-item">
+        <h5>
+            <a href="{%url 'artdetail' article.id%}">
+                {{article.title}}
+            </a>
+        </h5>
+        <small>создал {{article.user.username}} • {{article.timestamp|date:"d.m.Y H:i"}}</small>
+    </li>
+    {% empty%}
+    <p>нет статей</p>
+    {%endfor%}
+</ul>
+{%endblock%}

@@ -1,0 +1,17 @@
+{%extends "base.html"%}
+{%block title %}{{article.title}}{%endblock%}
+{%block content%}
+<h2>{{article.title}}</h2>
+<p>{{article.text}}</p>
+<p class="text-muted">
+    Автор: {{article.user.username}}  
+    <br>
+    Дата публикации:{{article.timestamp|date:"d.m.Y H:i"}}
+</p>
+{%if request.user == article.user%}
+    <a href="{% url 'artedit' article.id %}" class="btn btn-warning">Изменить</a>
+    <a href="{% url 'artdelete' article.id %}" class="btn btn-danger"
+       onclick="return confirm('Delete article?')">Удалить</a>
+{%endif %}
+<a href="{% url 'artlist' %}" class="btn btn-secondary mt-3">Назад</a>
+{%endblock%}
